@@ -8,4 +8,12 @@ describe('knapsack', () => {
 
     expect(getValue(weights, values, capacity)).toEqual(200);
   });
+
+  test('should return 80', () => {
+    const weights = [5, 3, 4, 2];
+    const values = [60, 50, 70, 30];
+    const capacity = 5;
+
+    expect(getValue(weights, values, capacity)).toEqual(80);
+  });
 });

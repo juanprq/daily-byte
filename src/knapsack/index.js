@@ -1,11 +1,15 @@
-const getValue = ([hWeight, ...weights], [hValue, ...values], capacity) => {
-  if (!hWeight) return 0;
-  if (hWeight > capacity) return getValue(weights, values, capacity);
+const getValue = (weights, values, capacity) => {
+  const calculate = (weights, values, capacity, index) => {
+    if (index < 0) return 0;
+    if (weights[index] > capacity) return calculate(weights, values, capacity, index - 1);
 
-  const leftValue = hValue + getValue(weights, values, capacity - hWeight);
-  const rightValue = getValue(weights, values, capacity);
+    const leftValue = values[index] + calculate(weights, values, capacity - weights[index], index - 1);
+    const rightValue = calculate(weights, values, capacity, index - 1);
 
-  return Math.max(leftValue, rightValue);
+    return Math.max(leftValue, rightValue);
+  };
+
+  return calculate(weights, values, capacity, weights.length - 1);
 };
 
 module.exports = getValue;
