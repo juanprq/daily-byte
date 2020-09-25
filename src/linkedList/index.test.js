@@ -59,4 +59,25 @@ describe('linked list', () => {
     expect(list.getFirst()).toBe(node1);
   });
 
+  test('add', () => {
+    const list = new LinkedList();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    expect(list.head.data).toEqual(1);
+    expect(list.head.next.data).toEqual(2);
+    expect(list.head.next.next.data).toEqual(3);
+  });
+
+  test('print', () => {
+    const list = new LinkedList();
+    list
+      .add(1)
+      .add(2)
+      .add(3);
+
+    expect(list.print()).toEqual('1->2->3->null');
+  });
+
 });

@@ -1,3 +1,5 @@
+const Node = require('./node');
+
 class LinkedList {
   constructor(head) {
     this.head = head;
@@ -29,6 +31,18 @@ class LinkedList {
 
   getFirst() {
     return this.head;
+  }
+
+  add(data) {
+    const node = new Node(data);
+    if (this.head) {
+      const lastNode = this.getLast();
+      lastNode.next = node;
+    } else {
+      this.head = node;
+    }
+
+    return this;
   }
 
   print() {
