@@ -30,6 +30,19 @@ class LinkedList {
   getFirst() {
     return this.head;
   }
+
+  print() {
+    let string = '';
+    let node = this.head;
+
+    while(node) {
+      string += `${node.data}->`;
+      node = node.next;
+    }
+
+    string += 'null';
+    return string;
+  }
 }
 
 module.exports = LinkedList;
