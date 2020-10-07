@@ -19,6 +19,10 @@ class Node {
 
     return node;
   }
+
+  isLeaf() {
+    return !this.left && !this.right;
+  }
 }
 
 module.exports = Node;
