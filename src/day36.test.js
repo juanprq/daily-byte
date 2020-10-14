@@ -19,7 +19,7 @@ describe('getLevels', () => {
   test('should return 3 levels', () => {
     const head = new Node(2);
     head.addLeft(10);
-    const node15 = head.addLeft(15);
+    const node15 = head.addRight(15);
     node15.addRight(20);
 
     const binaryTree = new BinaryTree(head);
