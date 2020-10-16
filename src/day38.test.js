@@ -13,7 +13,7 @@ describe('getLeftViewNodes', () => {
     head.addRight(7);
 
     const binaryTree = new BinaryTree(head);
-    expect(getLeftViewNodes(binaryTree)).toEqual([4, 5])
+    expect(getLeftViewNodes(binaryTree)).toEqual([4, 2])
   });
 
   test('should return [7, 4, 1, 9]', () => {
