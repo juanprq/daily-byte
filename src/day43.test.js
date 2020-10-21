@@ -22,6 +22,6 @@ describe('getDepth', () => {
     node29.addLeft(4);
     node29.addRight(13);
 
-    expect(getDepth(binaryTree)).toEqual(3);
+    expect(getDepth(head)).toEqual(3);
   });
 });
