@@ -15,7 +15,7 @@ describe('pathExists', () => {
     node2.addLeft(12);
     node2.addRight(29);
 
-    expect(getPath(head, 15)).toBe(true);
+    expect(pathExists(head, 15)).toBe(true);
   });
 
   test('it should return true', () => {
