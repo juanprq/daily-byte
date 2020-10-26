@@ -26,14 +26,13 @@ describe('hasSameLeaves', () => {
     node29A.addRight(9);
 
     const headB = new Node(8);
-    headB
-      .addLeft(2)
-      .addLeft(2);
+    const node2B = headB.addLeft(2);
+    node2B.addLeft(2);
 
-    const node29B = headB.addLeft(3);
+    const node29B = headB.addRight(29);
     const node3B = node29B.addLeft(3);
-    node3B.addRight(3);
     node29B.addRight(9);
+    node3B.addRight(3);
 
     expect(hasSameLeaves(headA, headB)).toBe(true);
   });
