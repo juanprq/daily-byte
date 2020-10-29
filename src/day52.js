@@ -1,3 +1,5 @@
+let blockedPath;
+
 const initializeBlockedPaths = (rows, cols) => {
   const result = [];
 
@@ -24,10 +26,14 @@ const searchPath = (letters, wordLetters, blockedPath, row, col, currentIndex) =
   if (currentIndex === wordLetters.length - 1) return true;
 
   blockedPath[row][col] = true;
-  return searchPath(letters, wordLetters, blockedPath, row + 1, col, currentIndex + 1)
+  result = searchPath(letters, wordLetters, blockedPath, row + 1, col, currentIndex + 1)
     || searchPath(letters, wordLetters, blockedPath, row - 1, col, currentIndex + 1)
     || searchPath(letters, wordLetters, blockedPath, row, col + 1, currentIndex + 1)
     || searchPath(letters, wordLetters, blockedPath, row, col - 1, currentIndex + 1)
+
+  blockedPath[row][col] = false;
+
+  return result;
 };
 
 const pathExists = (letters, word) => {
@@ -35,9 +41,9 @@ const pathExists = (letters, word) => {
   const rows = letters.length;
   const cols = letters[0].length;
 
+  blockedPath = initializeBlockedPaths(rows, cols);
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      const blockedPath = initializeBlockedPaths(rows, cols);
       const exists = searchPath(letters, wordLetters, blockedPath, i, j, 0);
 
       if (exists) return true;
