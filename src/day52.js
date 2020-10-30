@@ -1,20 +1,6 @@
+const { fillMatrix } = require('./util');
+
 let blockedPath;
-
-const initializeBlockedPaths = (rows, cols) => {
-  const result = [];
-
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      if (result[i]) {
-        result[i][j] = false;
-      } else {
-        result[i] = [false];
-      }
-    }
-  }
-
-  return result;
-}
 
 const searchPath = (letters, wordLetters, blockedPath, row, col, currentIndex) => {
   const currentLetter = wordLetters[currentIndex];
@@ -41,7 +27,7 @@ const pathExists = (letters, word) => {
   const rows = letters.length;
   const cols = letters[0].length;
 
-  blockedPath = initializeBlockedPaths(rows, cols);
+  blockedPath = fillMatrix(rows, cols);
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       const exists = searchPath(letters, wordLetters, blockedPath, i, j, 0);
