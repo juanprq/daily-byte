@@ -6,17 +6,13 @@ describe('getPalindromeWords', () => {
   });
 
   test('it should return palindrome words', () => {
-    expect(getPalindromeWords('abcba'))
+    expect(getPalindromeWords('abcba').sort())
       .toEqual([
         'a',
         'b',
         'c',
-        'b',
-        'a',
-        'a',
         'bcb',
-        'a',
         'abcba',
-      ]);
+      ].sort());
   });
 });
