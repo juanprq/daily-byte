@@ -11,7 +11,7 @@ describe('canJump', () => {
   });
 
   test('it should return true', () => {
-    const stones = [0, 1, 2, 4];
+    const stones = [0, 1, 2, 3];
     expect(canJump(stones)).toBe(true);
   });
 });
