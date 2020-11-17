@@ -24,5 +24,5 @@ describe('getLongestCommonSubsequence', () => {
     const b = 'def';
 
     expect(getLongestCommonSubsequence(a, b)).toEqual(0);
-  })
+  });
 });
