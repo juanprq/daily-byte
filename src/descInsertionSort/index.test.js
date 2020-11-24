@@ -23,6 +23,6 @@ describe('descInsertionSort', () => {
 
   test('it should not mutate the original array', () => {
     const array = [3, 5]
-    expect(descInsertionSort(array)).not.toEqual(array);
+    expect(descInsertionSort(array)).not.toBe(array);
   });
 });
