@@ -5,11 +5,11 @@ describe('findBadVersion', () => {
     expect(findBadVersion).toBeInstanceOf(Function);
   });
 
-  // test('it should return 4', () => {
-  //   const isBadRelease = (release) => release >= 4;
+  test('it should return 4', () => {
+    const isBadRelease = (release) => release >= 4;
 
-  //   expect(findBadVersion(5, isBadRelease)).toEqual(4);
-  // });
+    expect(findBadVersion(5, isBadRelease)).toEqual(4);
+  });
 
   test('it should call the function 3 times', () => {
     const isBadRelease = jest.fn((release) => release >= 4);
