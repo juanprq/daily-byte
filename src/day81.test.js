@@ -2,7 +2,7 @@ const flipDigits = require('./day81');
 
 describe('flipDigits', () => {
   test('it should be a function', () => {
-    test(flipDigits).toBeInstanceOf(Function);
+    expect(flipDigits).toBeInstanceOf(Function);
   });
 
   test('it should return 4', () => {
