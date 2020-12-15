@@ -1,4 +1,4 @@
-const minimizePath = require('../day94');
+const minimizePath = require('./day94');
 
 describe('minimizePath', () => {
   test('it should be a function', () => {
